@@ -1,6 +1,6 @@
 # MQTT Audio Server
 This tool is for running an MQTT client to manage MQTT requests for
-playing local and youtube audios/video. 
+playing local and youtube audios/videos. 
 
 Tested on Windows11 and Rasbian-raspi3 (should also work on Mac and Linux).
 
