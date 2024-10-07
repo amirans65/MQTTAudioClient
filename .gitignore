@@ -1,1 +1,5 @@
-appsettings.py
+appsettings.json
+todo.md
+debug.py
+**/audio/
+**/__pycache__

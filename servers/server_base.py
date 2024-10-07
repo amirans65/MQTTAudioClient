@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
 import json
 from commands.command_builder import CommandBuilder
-from appsettings import mqtt_ip, mqtt_port, mqtt_username,mqtt_password
+from classes.settings import Settings
 
 class ServerBase:
     root_topic = "rpi"
@@ -9,6 +9,7 @@ class ServerBase:
     def __init__(self, sub_topic):
         self.topic = f"{self.root_topic}/{sub_topic}"
         self.last_message = ''
+        self.settings = Settings()
 
     @staticmethod
     def is_valid_json(text):
@@ -45,9 +46,9 @@ class ServerBase:
 
     def connect(self):
         self.client = mqtt.Client()
-        self.client.username_pw_set(mqtt_username, mqtt_password)
+        self.client.username_pw_set(self.settings.mqtt_username, self.settings.mqtt_password)
         self.client.on_connect = self.on_connect_builder()
         self.client.on_message = self.on_message_builder()
 
-        self.client.connect(mqtt_ip, mqtt_port, 60)
+        self.client.connect(self.settings.mqtt_ip, self.settings.mqtt_port, 60)
         self.client.loop_forever()
