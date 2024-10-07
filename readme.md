@@ -15,7 +15,7 @@ configure first an appsettings.py (see appsettings-template.json)
 ## Install
     - pip install paho-mqtt
     - pip install python-vlc
-    - pip install youtube-dl
+    - pip install yt-dlp
     - sudo apt install bluetooth bluez python3-bluez
 
 # To run:
