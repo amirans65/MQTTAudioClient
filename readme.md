@@ -1,4 +1,4 @@
-# MQTT Audio Server
+# MQTT Audio Client
 This tool is for running an MQTT client to manage MQTT requests for
 playing local and youtube audios/videos. 
 
