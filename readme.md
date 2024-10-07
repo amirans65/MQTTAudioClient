@@ -1,36 +1,43 @@
-# configure an appsettings.py (see appsettings-template)
+# MQTT Audio Server
+This tool is for running an MQTT client to manage MQTT requests for
+playing local and youtube audios/video. 
+
+Tested on Windows and Raspi3 (should also work on Mac and Linux).
 
 # Requirements:
+configure first an appsettings.py (see appsettings-template.json)
+
+## On raspi:
+    python3 -m venv myenv
+    source myenv/bin/activate
+    then install
+
+## Install
     - pip install paho-mqtt
     - pip install python-vlc
     - pip install youtube-dl
     - sudo apt install bluetooth bluez python3-bluez
 
-# on raspi:
-    python3 -m venv myenv
-    source myenv/bin/activate
-    then install
-
-# to run:
+# To run:
     source myenv/bin/activate
     python main.py
 
-# json example
-## for local:
-    ```
+# MQTT json example
+## for local
+    '''
     {
     "typ":"audio",
     "msg":"local",
     "params":[
-        "a1"
+        "playlist1"
     ],
     "max_playing_minutes": 5,
     "shuffle": 1
     }
-    ```
+    '''
 
-## for youtube:
-    ```
+## for youtube
+    '''
     {
     "typ":"audio",
     "msg":"youtube",
@@ -42,4 +49,14 @@
     "max_playing_minutes": 5,
     "shuffle": 1
     }
-    ```
+    '''
+
+# Todos:
+- cache youtube locally to not download everytime
+- add "immidiate stop" request
+- support volume controls and track controls
+- add local logger and upload log request
+- add 
+- add Microphone support
+- support ChatGPT
+- 

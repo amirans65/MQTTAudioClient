@@ -3,7 +3,7 @@ from classes.platform import Platform
 class Bluetooth:
     def __init__(self):
         pass
-    def connect():
+    def connect(self):
         if Platform().is_linux():
             try:
                 result = subprocess.run(['bl.sh'], capture_output=True, text=True)
